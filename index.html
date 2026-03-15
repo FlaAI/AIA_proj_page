@@ -275,7 +275,7 @@
       <!-- Visual Effects. -->
       <div class="column">
         <div class="content">
-          <h2 class="title is-3">Concept</h2>
+          <h2 class="title is-3">Research Status & Our Position</h2>
           <img src="./static/images/concept.png" 
                alt="Description of concept.png."/>
         </div>
@@ -291,12 +291,36 @@
               
             </p>
             <p>
-              The paradigm-level comparison between the existing audio jailbreaks against LALMs and the proposed Acoustic Interference. Existing works fall in the following routes (or their combinations): ① optimizing (text) semantic before AGM (e.g., semantic trojans), ② explicitly adjusting coarse-grained, pre-defined proxies of audio features within AGM (e.g., discrete acoustic parameters like gender and emotion), or ③ perturbing the audio after AGM just like a general signal without considering audio features (e.g., adversarial attack). The final objective of all these existing jailbreaks is to craft malicious audio as the attack vector. In contrast, we propose to maintain the original jailbreak text, along with manipulated (but still benign) audio instruction, to conduct the jailbreak. Such a manipulation directly relies on native acoustic features, which are defined as the acoustic latent semantic (ALS).
+              The paradigm-level comparison between the existing audio jailbreaks against LALMs and the proposed Acoustic Interference. 
+              Existing works fall in the following routes (or their combinations): ① optimizing (text) semantic before AGM (e.g., semantic trojans), 
+              ② explicitly adjusting coarse-grained, pre-defined proxies of audio features within AGM (e.g., discrete acoustic parameters like gender 
+              and emotion), or ③ perturbing the audio after AGM just like a general signal without considering audio features (e.g., adversarial attack).
+              The final objective of all these existing jailbreaks is to craft malicious audio as the attack vector. In contrast, we propose to maintain 
+              the original jailbreak text, along with manipulated (but still benign) audio instruction, to conduct the jailbreak. Such a manipulation 
+              directly relies on native acoustic features, which are defined as the acoustic latent semantic (ALS).
             </p>
           </div>
 
         </div>
       </div>
+
+    <div class="content has-text-justified">
+      <p>
+        Here is the comparison of the proposed AIA with 12 existing audio jailbreak methods. The □ denotes that the full dataset is used, 
+        while the √ indicates that only a subset is involved. The gray √ means that the item is not included in the original work but supplemented 
+        by a recent benchmark, JALMBench. The table content shows the significant difference between the proposed AIA and previous works: 1) AIA 
+        does not utilize any existing categories of jailbreak strategies, thus demonstrating a new paradigm; 2) AIA does not rely on online audio 
+        generation during the attack, leading to higher efficiency and real-world threat; and 3) We cover the richest data sources without 
+        cherry-picking, and open all materials including the code and the universal audio arsenal for public access.
+      </p>
+    </div>
+
+    <div class="content has-text-centered">
+      <img src="./static/images/table_1.png" 
+           alt="Architecture of table_1" 
+           style="width: 100%; height: auto;"/>
+    </div>
+      
     </div>
     <!--/ Matting. -->
   </div>
@@ -344,6 +368,18 @@
       </div> -->
     <!-- </div> -->
     <!--/ Matting. -->
+
+    <!-- Animation0. -->
+    <!-- <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Research Status & Our Position</h2>
+
+        
+        
+        <br/>
+      </div>
+    </div> -->
+    <!--/ Animation. -->
 
     <!-- Animation. -->
     <div class="columns is-centered">
@@ -499,7 +535,7 @@
         <div class="content has-text-centered">
           <img src="./static/images/full_scale_2.png" 
                alt="Architecture of full_scale_2" 
-               style="width: 95%; height: auto;"/>
+               style="width: 100%; height: auto;"/>
         </div>
 
         <br/>
@@ -509,7 +545,7 @@
 
 
     <!-- Concurrent Work. -->
-    <div class="columns is-centered">
+    <!-- <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Related Links</h2>
 
@@ -532,8 +568,23 @@
           </p>
         </div>
       </div>
-    </div>
+    </div> -->
     <!--/ Concurrent Work. -->
+
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Open-Source Resources</h2>
+
+        <div class="content has-text-justified">
+          <p>
+            XXXXX.
+          </p>
+          <p>
+            <a href="https://arxiv.org/abs/2104.09125">Progressive Encoding for Neural Optimization</a> introduces an idea similar to our windowed position encoding for coarse-to-fine optimization.
+          </p>
+        </div>
+      </div>
+    </div>
 
   </div>
 </section>
