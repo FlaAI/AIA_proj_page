@@ -349,6 +349,11 @@
     <div class="columns is-centered">
       <div class="column is-full-width">
         <h2 class="title is-3">Method</h2>
+        <div class="content has-text-justified">
+          <p>
+            The core philosophy of our method is to shift the attack vector from optimizing malicious audio to interfering with safety alignment.
+          </p>
+        </div>
 
         <!-- Interpolating. -->
         <h3 class="title is-4">Construction of Acoustic Latent Semantic Arsenal</h3>
@@ -363,7 +368,22 @@
         <div class="content has-text-centered">
           <img src="./static/images/acoustic_arsenal_roadmap.png" 
                alt="Architecture of ALS construction" 
-               style="width: 80%; height: auto;"/>
+               style="width: 90%; height: auto;"/>
+        </div>
+
+        <h3 class="title is-4">Acoustic Interference: New Vulnerability of LALMs</h3>
+        <div class="content has-text-justified">
+          <p>
+            Below is the exploration process for the vulnerability of LALMs to the proposed Acoustic Interference. The results show a bi-directional 
+            interference effect. The introduction of ALS suppresses the success of previously strong text attacks but amplifies that of originally 
+            relatively weak ones, indicating that even natural ALS can cause a drift in the safety alignment path of LALM inference.
+          </p>
+        </div>
+
+        <div class="content has-text-centered">
+          <img src="./static/images/full_scale_1.png" 
+               alt="Architecture of full_scale_1" 
+               style="width: 90%; height: auto;"/>
         </div>
         
         <!-- <div class="columns is-vcentered interpolation-panel"> -->
