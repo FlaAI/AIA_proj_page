@@ -412,7 +412,7 @@
         <!--/ Interpolating. -->
 
         <!-- Re-rendering. -->
-        <h3 class="title is-4">Re-rendering the input video</h3>
+        <!-- <h3 class="title is-4">Re-rendering the input video</h3>
         <div class="content has-text-justified">
           <p>
             Using <span class="dnerf">Nerfies</span>, you can re-render a video from a novel
@@ -429,9 +429,58 @@
             <source src="./static/videos/replay.mp4"
                     type="video/mp4">
           </video>
-        </div>
+        </div> -->
         <!--/ Re-rendering. -->
 
+      </div>
+    </div>
+    <!--/ Animation. -->
+
+    <!-- Animation2. -->
+    <div class="columns is-centered">
+      <div class="column is-full-width">
+        <h2 class="title is-3">Results</h2>
+        <!-- <div class="content has-text-justified">
+          <p>
+            The core philosophy of our method is to shift the attack vector from optimizing malicious audio to interfering with safety alignment.
+          </p>
+        </div> -->
+
+        <!-- Interpolating. -->
+        <h3 class="title is-4 mt-6">Effectiveness of Acoustic Interference</h3>
+        <div class="content has-text-justified">
+          <p>
+            Here are the attack results of AIA upon seven open-source and three proprietary LALMs on the JBB and WildJailbreak datasets. We report 
+            two ASR metrics (as detailed in Section 3) and the average query times. For each AIA entry, we also provide text-only jailbreak results 
+            for comparison, with the absolute ASR gain over them reported in parentheses. This demonstrates that the proposed AIA consistently
+            amplifies the scores across all evaluated models, thus shaping a new general threat paradigm against LALMs: When text-only jailbreak 
+            reaches a bottleneck, the introduction of acoustic interference would induce a significant inference path drift, successfully bypassing 
+            the LALM safety alignment.
+          </p>
+        </div>
+
+        <div class="content has-text-centered">
+          <img src="./static/images/table_2.png" 
+               alt="Architecture of table_2" 
+               style="width: 100%; height: auto;"/>
+        </div>
+
+        <h3 class="title is-4 mt-6">Acoustic Interference: New Vulnerability of LALMs</h3>
+        <div class="content has-text-justified">
+          <p>
+            Below is the exploration process for the vulnerability of LALMs to the proposed Acoustic Interference. The results show a bi-directional 
+            interference effect. The introduction of ALS suppresses the success of previously strong text attacks but amplifies that of originally 
+            relatively weak ones, indicating that even natural ALS can cause a drift in the safety alignment path of LALM inference.
+          </p>
+        </div>
+
+        <div class="content has-text-centered">
+          <img src="./static/images/full_scale_1.png" 
+               alt="Architecture of full_scale_1" 
+               style="width: 90%; height: auto;"/>
+        </div>
+
+        <br/>
       </div>
     </div>
     <!--/ Animation. -->
