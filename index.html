@@ -465,18 +465,23 @@
                style="width: 100%; height: auto;"/>
         </div>
 
-        <h3 class="title is-4 mt-6">Acoustic Interference: New Vulnerability of LALMs</h3>
+        <h3 class="title is-4 mt-6">Comparison with SOTA Audio Jailbreaks</h3>
         <div class="content has-text-justified">
           <p>
-            Below is the exploration process for the vulnerability of LALMs to the proposed Acoustic Interference. The results show a bi-directional 
-            interference effect. The introduction of ALS suppresses the success of previously strong text attacks but amplifies that of originally 
-            relatively weak ones, indicating that even natural ALS can cause a drift in the safety alignment path of LALM inference.
+            Below is the comparison of AIA on ASR and query time with the existing seven instance-specific and two universal audio jailbreak methods 
+            across JBB, AdvBench, HarmBench datasets and 11 popular LALMs. Among our main related works, the universal LALM jailbreaks, the best results 
+            on each LALM are highlighted in bold font, while those among instance-specific methods are underlined. The scores colored in gray are from 
+            JALMBench with a looser evaluation strategy (thus should be only explained in the manner detailed in Section 3.1). The query time of 
+            AJailBench is marked as “10+B” as it states the need for 10 startup queries plus several Bayesian-optimization queries, without specifying 
+            the exact number of the latter (empirically, such optimization can be expensive). Overall, the proposed AIA not only significantly builds 
+            new SOTA in universal LALM jailbreak, but even also effectively outperforms existing instance-specific methods in most cases. At the same 
+            time, it maintains a middle query time, ranking second among the three universal methods and fifth among all 10 methods.
           </p>
         </div>
 
         <div class="content has-text-centered">
-          <img src="./static/images/full_scale_1.png" 
-               alt="Architecture of full_scale_1" 
+          <img src="./static/images/table_3.png" 
+               alt="Architecture of table_3" 
                style="width: 90%; height: auto;"/>
         </div>
 
