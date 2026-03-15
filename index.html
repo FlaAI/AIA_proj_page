@@ -168,6 +168,8 @@
       </h2>
     </div>
   </div>
+
+  
 </section>
 
 
@@ -291,288 +293,16 @@
     <!--/ Matting. -->
   </div>
 
-  
-  <!-- <div class="columns is-centered">
-    <div class="column is-full-width">
-      <h2 class="title is-3">Research Status</h2>
-        <style>
-        /* 响应式表格容器，防止在手机端溢出 */
-        .table-container {
-          width: 100%;
-          overflow-x: auto;
-          margin: 2rem 0;
-        }
-        
-        /* 学术风格表格 CSS */
-        .academic-table {
-          width: 100%;
-          border-collapse: collapse;
-          font-family: 'Google Sans', 'Noto Sans', sans-serif; /* 与 Nerfies 模板一致 */
-          font-size: 0.9rem;
-          line-height: 1.4;
-        }
-      
-        .academic-table caption {
-          caption-side: top;
-          text-align: justify;
-          font-size: 0.95rem;
-          margin-bottom: 1rem;
-          color: #4a4a4a;
-        }
-      
-        /* 顶部、底部粗线，以及表头下的细线 (模拟 \toprule, \midrule, \bottomrule) */
-        .academic-table thead tr:first-child th {
-          border-top: 2px solid #363636;
-        }
-        .academic-table thead tr:last-child th {
-          border-bottom: 1px solid #363636;
-        }
-        .academic-table tbody tr:last-child td {
-          border-bottom: 2px solid #363636;
-        }
-        
-        /* 组间分割线 */
-        .academic-table .group-divider td {
-          border-top: 1px solid #dbdbdb;
-        }
-      
-        .academic-table th, .academic-table td {
-          padding: 0.75rem 0.5rem;
-          text-align: center;
-          vertical-align: middle;
-        }
-      
-        /* 对应 LaTeX 中的 cl 和 l 列对齐 */
-        .academic-table .text-left {
-          text-align: left;
-        }
-      
-        /* 竖排文字 (模拟 \rotatebox{90}) */
-        .academic-table .vertical-text {
-          writing-mode: vertical-rl;
-          transform: rotate(180deg);
-          white-space: nowrap;
-          font-weight: bold;
-          letter-spacing: 0.1em;
-        }
-      
-        /* 特定列的右侧竖线 */
-        .academic-table .border-right {
-          border-right: 1px solid #dbdbdb;
-        }
-      
-        /* 浅灰色勾号 */
-        .gray-check {
-          color: #b5b5b5;
-        }
-        
-        /* 强调特殊符号 */
-        .symbol {
-          font-size: 1.1rem;
-        }
-      </style>
-      
-      <div class="table-container">
-        <table class="academic-table">
-          <caption>
-            <strong>Table 1:</strong> The comparison of the proposed AIA with 12 existing audio jailbreak methods. The jailbreak strategies ①②③ correspond to the ones in Figure 1. The □ denotes that the full dataset is used, while the ✓ indicates that only a subset is involved. The gray <span class="gray-check symbol">✓</span> means that the item is not included in the original work but supplemented by a recent benchmark, JALMBench. More details can be found in Appendix A. The table content shows the significant difference between the proposed AIA and previous works: 1) AIA does <strong>not</strong> utilize any existing categories of jailbreak strategies, thus demonstrating a <strong>new paradigm</strong>; 2) AIA does <strong>not</strong> rely on online audio generation during the attack, leading to higher efficiency and real-world threat; and 3) We cover the richest data sources without cherry-picking, and open all materials including the code and the universal audio arsenal for public access.
-          </caption>
-          
-          <thead>
-            <tr>
-              <th colspan="2" rowspan="2" class="border-right"><strong>Method</strong></th>
-              <th colspan="3" class="border-right"><strong>Jailbreak Strategy</strong></th>
-              <th colspan="4" class="border-right"><strong>Data Source</strong> (□: full dataset / ✓: partial samples)</th>
-              <th rowspan="2" class="border-right"><strong>Online<br>AGM</strong></th>
-              <th rowspan="2"><strong>Open-<br>Source</strong></th>
-            </tr>
-            <tr>
-              <th>①</th>
-              <th>②</th>
-              <th class="border-right">③</th>
-              <th>JBB</th>
-              <th>AdvBench</th>
-              <th>HarmBench</th>
-              <th class="border-right">Other</th>
-            </tr>
-          </thead>
-          
-          <tbody>
-            <tr>
-              <td rowspan="7" class="vertical-text border-right">Instance-Specific</td>
-              <td class="text-left border-right">BoN [xx]</td>
-              <td class="symbol">★</td>
-              <td class="symbol">★</td>
-              <td class="symbol border-right">★</td>
-              <td class="gray-check symbol">✓</td>
-              <td class="gray-check symbol">✓</td>
-              <td class="symbol">✓</td>
-              <td class="border-right"></td>
-              <td class="symbol border-right">✓</td>
-              <td class="symbol">✓</td>
-            </tr>
-            <tr>
-              <td class="text-left border-right">Speech-Specific Jailbreak [xx]</td>
-              <td class="symbol">★</td>
-              <td></td>
-              <td class="symbol border-right">★</td>
-              <td class="gray-check symbol">✓</td>
-              <td class="symbol">✓</td>
-              <td class="gray-check symbol">✓</td>
-              <td class="border-right"></td>
-              <td class="symbol border-right">✓</td>
-              <td class="symbol">✓</td>
-            </tr>
-            <tr>
-              <td class="text-left border-right">AdvWave (black-box) [xx]</td>
-              <td class="symbol">★</td>
-              <td></td>
-              <td class="border-right"></td>
-              <td class="gray-check symbol">✓</td>
-              <td class="symbol">□</td>
-              <td class="gray-check symbol">✓</td>
-              <td class="border-right"></td>
-              <td class="symbol border-right">✓</td>
-              <td class="gray-check symbol">✓</td>
-            </tr>
-            <tr>
-              <td class="text-left border-right">Jailbreak-AudioBench [xx]</td>
-              <td></td>
-              <td class="symbol">★</td>
-              <td class="symbol border-right">★</td>
-              <td></td>
-              <td class="symbol">✓</td>
-              <td></td>
-              <td class="text-left border-right"><span class="symbol">✓</span> RedTeam-2K</td>
-              <td class="symbol border-right">✓</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="text-left border-right">Multi-AudioJail [xx]</td>
-              <td></td>
-              <td class="symbol">★</td>
-              <td class="symbol border-right">★</td>
-              <td></td>
-              <td class="symbol">□</td>
-              <td></td>
-              <td class="border-right"></td>
-              <td class="symbol border-right">✓</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="text-left border-right">AJailBench [xx]</td>
-              <td class="symbol">★</td>
-              <td class="symbol">★</td>
-              <td class="symbol border-right">★</td>
-              <td class="symbol">✓</td>
-              <td class="symbol">✓</td>
-              <td></td>
-              <td class="text-left border-right"><span class="symbol">✓</span> DAN</td>
-              <td class="symbol border-right">✓</td>
-              <td class="symbol">✓</td>
-            </tr>
-            <tr>
-              <td class="text-left border-right">SACRED-Bench [xx]</td>
-              <td class="symbol">★</td>
-              <td class="symbol">★</td>
-              <td class="symbol border-right">★</td>
-              <td></td>
-              <td class="symbol">✓</td>
-              <td class="symbol">✓</td>
-              <td class="border-right"></td>
-              <td class="symbol border-right">✓</td>
-              <td class="symbol">✓</td>
-            </tr>
-      
-            <tr class="group-divider">
-              <td rowspan="6" class="vertical-text border-right">Universal</td>
-              <td class="text-left border-right">VoiceJailbreak [xx]</td>
-              <td class="symbol">★</td>
-              <td></td>
-              <td class="border-right"></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td class="text-left border-right"><span class="symbol">✓</span> ForbiddenQuestionSet</td>
-              <td class="symbol border-right">✓</td>
-              <td class="symbol">✓</td>
-            </tr>
-            <tr>
-              <td class="text-left border-right">AMSE [xx]</td>
-              <td></td>
-              <td class="symbol">★</td>
-              <td class="symbol border-right">★</td>
-              <td class="symbol">✓</td>
-              <td class="symbol">✓</td>
-              <td class="symbol">✓</td>
-              <td class="border-right"></td>
-              <td class="symbol border-right">✓</td>
-              <td class="symbol">✓</td>
-            </tr>
-            <tr>
-              <td class="text-left border-right">"I am bad" [xx]</td>
-              <td></td>
-              <td></td>
-              <td class="symbol border-right">★</td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td class="text-left border-right"><span class="symbol">□</span> Toxic-66 &amp; <span class="symbol">✓</span> RealToxicityPrompts</td>
-              <td class="border-right"></td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="text-left border-right">Flanking Attack [xx]</td>
-              <td class="symbol">★</td>
-              <td></td>
-              <td class="border-right"></td>
-              <td></td>
-              <td></td>
-              <td></td>
-              <td class="text-left border-right">* private</td>
-              <td class="symbol border-right">✓</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="text-left border-right">AudioJailbreak [xx]</td>
-              <td></td>
-              <td class="symbol">★</td>
-              <td class="symbol border-right">★</td>
-              <td></td>
-              <td class="symbol">✓</td>
-              <td></td>
-              <td class="border-right"></td>
-              <td class="symbol border-right">✓</td>
-              <td></td>
-            </tr>
-            <tr>
-              <td class="text-left border-right"><strong>Acoustic Interference Attack (AIA, Ours)</strong></td>
-              <td></td>
-              <td></td>
-              <td class="border-right"></td>
-              <td class="symbol">□</td>
-              <td class="symbol">✓</td>
-              <td class="symbol">✓</td>
-              <td class="text-left border-right"><span class="symbol">✓</span> WildJailbreak &amp; <span class="symbol">✓</span> HH-RLHF</td>
-              <td class="border-right"></td>
-              <td class="symbol">✓</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-  </div> -->
-
 </section>
 
   
 <section class="section">
   <div class="container is-max-desktop">
 
-    <div class="columns is-centered">
+    <!-- <div class="columns is-centered"> -->
 
       <!-- Visual Effects. -->
-      <div class="column">
+      <!-- <div class="column">
         <div class="content">
           <h2 class="title is-3">Visual Effects</h2>
           <p>
@@ -584,11 +314,11 @@
                     type="video/mp4">
           </video>
         </div>
-      </div>
+      </div> -->
       <!--/ Visual Effects. -->
 
       <!-- Matting. -->
-      <div class="column">
+      <!-- <div class="column">
         <h2 class="title is-3">Matting</h2>
         <div class="columns is-centered">
           <div class="column content">
@@ -603,8 +333,8 @@
           </div>
 
         </div>
-      </div>
-    </div>
+      </div> -->
+    <!-- </div> -->
     <!--/ Matting. -->
 
     <!-- Animation. -->
